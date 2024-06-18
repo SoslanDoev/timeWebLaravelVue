@@ -1,0 +1,1 @@
+.app__home-tests{margin:0 0 25px;display:grid;grid-template-columns:repeat(4,1fr);gap:25px}.app__home-tests__item{cursor:pointer;padding:10px;width:100%;background-color:var(--clr-primary);border:2px solid var(--clr-secondary);border-radius:4px}

@@ -1,0 +1,1 @@
+import{r as o,o as i,c as m,d as r,t as c,g as n}from"./app-Dp8iK4W1.js";const d={key:0,class:"message"},_={__name:"AppActive",props:{message:{type:String,default:"Успешно"}},emits:["dismissed"],setup(s,{emit:t}){const a=t,e=o(!0);return i(()=>{setTimeout(()=>{e.value=!1,a("dismissed")},3e3)}),(l,p)=>e.value?(m(),r("div",d,c(s.message),1)):n("",!0)}};export{_};

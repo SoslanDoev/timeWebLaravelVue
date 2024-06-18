@@ -1,0 +1,1 @@
+import{c as o,d as r,p as a}from"./app-Dp8iK4W1.js";const s=["for"],n={__name:"AppLabel",props:{to:{type:String,default:""}},setup(e){return(t,l)=>(o(),r("label",{for:e.to,class:"label hover"},[a(t.$slots,"default")],8,s))}};export{n as _};
