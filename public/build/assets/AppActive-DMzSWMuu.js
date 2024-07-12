@@ -1,0 +1,1 @@
+import{r as o,o as i,a as m,c as r,t as c,k as n}from"./app-iuemlvLu.js";const l={key:0,class:"message"},_={__name:"AppActive",props:{message:{type:String,default:"Успешно"}},emits:["dismissed"],setup(s,{emit:t}){const a=t,e=o(!0);return i(()=>{setTimeout(()=>{e.value=!1,a("dismissed")},3e3)}),(p,u)=>e.value?(m(),r("div",l,c(s.message),1)):n("",!0)}};export{_};

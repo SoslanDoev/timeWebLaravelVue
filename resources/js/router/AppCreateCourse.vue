@@ -58,11 +58,6 @@
     div.classList.add("drop__zone");
     div.setAttribute("draggable", "true");
     div.addEventListener("dragstart", (event) => handleDragStart(event, div));
-    const btnDelete = document.createElement("button")
-    btnDelete.classList.add("btn")
-    btnDelete.innerHTML = "Удалить"
-    btnDelete.addEventListener("click", () => { div.remove(); })
-    div.appendChild(btnDelete)
 
 
     if (item.name === "table") {
@@ -331,7 +326,7 @@
     }
   });
 
-  console.log(newStr);
+  console.log("33333333333333", newStr);
 //   return newStr;
     const name = document.querySelector(".input--title")
     const user = computed(() => store.state.user)
