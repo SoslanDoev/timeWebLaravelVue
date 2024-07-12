@@ -1,1 +1,0 @@
-import{_ as s,c as t,d as c,e as o,p as n}from"./app-Dp8iK4W1.js";const a={},r={class:"auth"},_={class:"auth__inner"};function d(e,i){return t(),c("section",r,[o("div",_,[n(e.$slots,"default")])])}const p=s(a,[["render",d]]);export{p as A};

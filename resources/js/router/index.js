@@ -19,6 +19,22 @@ const routes = [
     title: 'Регистрация', // Название страницы
     headerFooterVisible: false, // Отключить HeaderFooter
   }},
+  {path: '/create-course/', component: () => import(`./AppCreateCourse.vue`), name: 'AppCreateCourse', meta: {
+    guard: 'teacher', // Защита (guest - для гостей; all - для всех; auth - для авторизированных)
+    title: 'Создание теста', // Название страницы
+    headerFooterVisible: true, // Отключить HeaderFooter
+  }},
+  {path: '/get-course/:id', component: () => import(`./AppCourseId.vue`), name: 'AppCourseId', meta: {
+    guard: 'teacher', // Защита (guest - для гостей; all - для всех; auth - для авторизированных)
+    title: 'Создание теста', // Название страницы
+    headerFooterVisible: true, // Отключить HeaderFooter
+  }},
+  {path: '/get-fav', component: () => import(`./AppFav.vue`), name: 'AppFav', meta: {
+    guard: 'auth', // Защита (guest - для гостей; all - для всех; auth - для авторизированных)
+    title: 'Создание теста', // Название страницы
+    headerFooterVisible: true, // Отключить HeaderFooter
+  }},
+  
 
   {path: '/test/:id', component: () => import(`./AppTest.vue`), name: 'Test', meta: {
     guard: 'auth', // Защита (guest - для гостей; all - для всех; auth - для авторизированных)
@@ -69,7 +85,7 @@ router.beforeResolve(async (to, from, next) => {
   const user = store.state.user
   // Если пользователь не авторизован
   if (!user) { // Если пытается перейти на маршрут с guard: 'auth'
-    if (to.meta.guard === 'auth' || to.meta.guard === "admin") { // Перенаправляем на страницу авторизации
+    if (to.meta.guard === 'auth' || to.meta.guard === "admin" || to.meta.guard === "teacher") { // Перенаправляем на страницу авторизации
       next({ name: 'Login' })
     } else { // Иначе разрешаем переход
       next()
@@ -84,6 +100,13 @@ router.beforeResolve(async (to, from, next) => {
     } else if (user.role === 1) { // Если роль пользователя 1 (админ)
       if (to.name === 'Home') { // Запрещаем доступ к домашней странице
         next({ name: "Admin" })
+        // next(false) // Отменяем переход
+      } else { // Иначе разрешаем переход
+        next()
+      }
+    } else if (user.role === 2) { // Если роль пользователя 2 (Препод)
+      if (to.name === 'Admin') { // Запрещаем доступ к домашней странице
+        next({ name: "Home" })
         // next(false) // Отменяем переход
       } else { // Иначе разрешаем переход
         next()

@@ -28,7 +28,6 @@ class UpdateRequest extends FormRequest
             'surname' => 'sometimes|required|string|min:3|max:50',
             'role' => 'sometimes|integer|min:0|max:5',
             'block' => 'sometimes|boolean',
-            'group_id' => 'sometimes|required|integer|min:0',
             'email' => 'sometimes|email|min:3|max:255' . $this->route('user'),
             'password' => 'sometimes|required|string|min:3|max:255|confirmed',
             'password_confirmation' => 'sometimes|required_with:password|min:3|max:255|string'
@@ -54,10 +53,6 @@ class UpdateRequest extends FormRequest
                 'role.max' => 'Поле не может быть больше 5.',
 
                 'block.required' => 'Поле обязательно для заполнения.',
-
-                'group_id.required' => 'Поле обязательно для заполнения.',
-                'group_id.integer' => 'Поле должно быть целым числом.',
-                'group_id.min' => 'Поле не может быть меньше 0.',
 
                 'email.required' => 'Поле обязательно для заполнения.',
                 'email.email' => 'Поле должно быть действительным адресом электронной почты.',

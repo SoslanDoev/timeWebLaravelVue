@@ -12,7 +12,6 @@ class TestSchedule extends Model
     public $timestamps = true;
     protected $fillable = [
         "test_id",
-        "group_id",
         "start_time",
         "end_time",
     ];

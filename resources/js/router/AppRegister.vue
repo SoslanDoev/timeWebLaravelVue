@@ -9,31 +9,18 @@
             @dismissed="removeMessage(index)"
         />
         <h2 class="title">Регистрация</h2>
+        <div style="display: flex; gap: 10px; width: 100%;">
+            <AppLabel for="role_0">Ученик</AppLabel>
+            <input id="role_0" type="radio" class="input" v-model="form['role']" name="role" value="0" checked>
+            <AppLabel for="role_1">Преподаватель</AppLabel>
+            <input id="role_1" type="radio" class="input" v-model="form['role']" name="role" value="2">
+        </div>
         <AppLabel :to="'name'">Введите имя *</AppLabel>
         <input id="name" type="text" v-model="form.name" class="input" placeholder="Введите имя">
         <p v-if="errors.name">{{ errors.name }}</p>
         <AppLabel :to="'surname'">Введите фамилию *</AppLabel>
         <input id="surname" type="text" v-model="form.surname" class="input" placeholder="Введите фамилию">
         <p v-if="errors.surname">{{ errors.surname }}</p>
-        <div style="display: flex; justify-content: space-between; align-items: center;">
-            <AppLabel :to="'group'">Выберите группу *</AppLabel>
-            <a href="#" @click.prevent="groupsGet">Обновить</a>
-        </div>
-        <select class="input" id="group" v-model="form.group">
-            <template v-if="groups">
-                <option
-                    v-for="item in groups"
-                    :key="item.id"
-                    :value="Number(item.id)"
-                >
-                {{ item.name }}
-            </option>
-            </template>
-            <template v-else>
-                <option value="-1">Пусто</option>
-            </template>
-        </select>
-        <p v-if="errors.group_id">{{ errors.group_id }}</p>
         <AppLabel :to="'email'">Введите почту *</AppLabel>
         <input id="email" type="email" v-model="form.email" class="input" placeholder="Введите почту">
         <p v-if="errors.email">{{ errors.email }}</p>
@@ -71,22 +58,11 @@
     const form = ref({
         "name": null,
         "surname": null,
-        "group": null,
+        "role": 0,
         "email": null,
         "password": null,
         "password_confirmation": null,
     }) // Форма авторизации
-
-    const groups = ref([])
-
-    const groupsGet = async () => {
-        try {
-            const res = await axios.get("api/groups/")
-            groups.value = res.data.data
-        } catch(err) {
-            console.log(err)
-        }
-    }; groupsGet()
 
     const login = async (email, password) => {
         axios.post("/api/auth/login", {
@@ -111,7 +87,7 @@
         axios.post("/api/users", {
             "name": form.value.name,
             "surname": form.value.surname,
-            "group_id": form.value.group,
+            "role": form.value.role,
             "email": form.value.email,
             "password": form.value.password,
             "password_confirmation": form.value.password_confirmation,

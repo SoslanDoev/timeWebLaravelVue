@@ -1,10 +1,10 @@
 {
-  "_AppActive-!~{00a}~.js": {
+  "_AppActive-!~{00d}~.js": {
     "file": "assets/AppActive-CQ3qS9P_.css",
-    "src": "_AppActive-!~{00a}~.js"
+    "src": "_AppActive-!~{00d}~.js"
   },
-  "_AppActive-iTYP5dq1.js": {
-    "file": "assets/AppActive-iTYP5dq1.js",
+  "_AppActive-czQzqbyx.js": {
+    "file": "assets/AppActive-czQzqbyx.js",
     "name": "AppActive",
     "imports": [
       "resources/js/app.js"
@@ -13,19 +13,19 @@
       "assets/AppActive-CQ3qS9P_.css"
     ]
   },
-  "_AppArrowRight-lNnzzPHc.js": {
-    "file": "assets/AppArrowRight-lNnzzPHc.js",
+  "_AppArrowRight-Dg7FoaJb.js": {
+    "file": "assets/AppArrowRight-Dg7FoaJb.js",
     "name": "AppArrowRight",
     "imports": [
       "resources/js/app.js"
     ]
   },
-  "_AppAuthSection-!~{00b}~.js": {
+  "_AppAuthSection-!~{00e}~.js": {
     "file": "assets/AppAuthSection-C_RfUq7e.css",
-    "src": "_AppAuthSection-!~{00b}~.js"
+    "src": "_AppAuthSection-!~{00e}~.js"
   },
-  "_AppAuthSection-D0D-aP-n.js": {
-    "file": "assets/AppAuthSection-D0D-aP-n.js",
+  "_AppAuthSection-C4jFz5OS.js": {
+    "file": "assets/AppAuthSection-C4jFz5OS.js",
     "name": "AppAuthSection",
     "imports": [
       "resources/js/app.js"
@@ -34,12 +34,12 @@
       "assets/AppAuthSection-C_RfUq7e.css"
     ]
   },
-  "_AppLabel-!~{00c}~.js": {
+  "_AppLabel-!~{00f}~.js": {
     "file": "assets/AppLabel-BnXBuCWo.css",
-    "src": "_AppLabel-!~{00c}~.js"
+    "src": "_AppLabel-!~{00f}~.js"
   },
-  "_AppLabel-CHay-ZZK.js": {
-    "file": "assets/AppLabel-CHay-ZZK.js",
+  "_AppLabel-DGWVFSkF.js": {
+    "file": "assets/AppLabel-DGWVFSkF.js",
     "name": "AppLabel",
     "imports": [
       "resources/js/app.js"
@@ -49,7 +49,7 @@
     ]
   },
   "resources/js/app.js": {
-    "file": "assets/app-Dp8iK4W1.js",
+    "file": "assets/app-BxmQDjrR.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
@@ -57,6 +57,9 @@
       "resources/js/router/AppHome.vue",
       "resources/js/router/AppLogin.vue",
       "resources/js/router/AppRegister.vue",
+      "resources/js/router/AppCreateCourse.vue",
+      "resources/js/router/AppCourseId.vue",
+      "resources/js/router/AppFav.vue",
       "resources/js/router/AppTest.vue",
       "resources/js/router/AppLoginActive.vue",
       "resources/js/router/AppAdmin.vue",
@@ -64,41 +67,71 @@
       "resources/js/router/AppNotFound.vue"
     ],
     "css": [
-      "assets/app-B7wnLnyZ.css"
+      "assets/app-C4l0KxOg.css"
     ]
   },
   "resources/js/router/AppAdmin.vue": {
-    "file": "assets/AppAdmin-mb5tmxjA.js",
+    "file": "assets/AppAdmin-BmRkKPzr.js",
     "name": "AppAdmin",
     "src": "resources/js/router/AppAdmin.vue",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js",
-      "_AppLabel-CHay-ZZK.js",
-      "_AppArrowRight-lNnzzPHc.js",
-      "_AppActive-iTYP5dq1.js"
+      "_AppLabel-DGWVFSkF.js",
+      "_AppArrowRight-Dg7FoaJb.js",
+      "_AppActive-czQzqbyx.js"
     ],
     "css": [
       "assets/AppAdmin-AMBbklOv.css"
     ]
   },
+  "resources/js/router/AppCourseId.vue": {
+    "file": "assets/AppCourseId-CBkylo44.js",
+    "name": "AppCourseId",
+    "src": "resources/js/router/AppCourseId.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "resources/js/router/AppCreateCourse.vue": {
+    "file": "assets/AppCreateCourse-NSAknwaq.js",
+    "name": "AppCreateCourse",
+    "src": "resources/js/router/AppCreateCourse.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ],
+    "css": [
+      "assets/AppCreateCourse-BsVmbOzw.css"
+    ]
+  },
   "resources/js/router/AppCreateTest.vue": {
-    "file": "assets/AppCreateTest-CG28d2bj.js",
+    "file": "assets/AppCreateTest-CStdM2va.js",
     "name": "AppCreateTest",
     "src": "resources/js/router/AppCreateTest.vue",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js",
-      "_AppActive-iTYP5dq1.js",
-      "_AppLabel-CHay-ZZK.js",
-      "_AppArrowRight-lNnzzPHc.js"
+      "_AppActive-czQzqbyx.js",
+      "_AppLabel-DGWVFSkF.js",
+      "_AppArrowRight-Dg7FoaJb.js"
     ],
     "css": [
       "assets/AppCreateTest-DywkJu8A.css"
     ]
   },
+  "resources/js/router/AppFav.vue": {
+    "file": "assets/AppFav-DqO-FdPK.js",
+    "name": "AppFav",
+    "src": "resources/js/router/AppFav.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
   "resources/js/router/AppHome.vue": {
-    "file": "assets/AppHome-Cu3xNfHK.js",
+    "file": "assets/AppHome-Dz7OGouH.js",
     "name": "AppHome",
     "src": "resources/js/router/AppHome.vue",
     "isDynamicEntry": true,
@@ -106,22 +139,22 @@
       "resources/js/app.js"
     ],
     "css": [
-      "assets/AppHome-Duvc7dzC.css"
+      "assets/AppHome-CHyEhqVt.css"
     ]
   },
   "resources/js/router/AppLogin.vue": {
-    "file": "assets/AppLogin-BbLXyL3P.js",
+    "file": "assets/AppLogin-BxuNdiwA.js",
     "name": "AppLogin",
     "src": "resources/js/router/AppLogin.vue",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js",
-      "_AppActive-iTYP5dq1.js",
-      "_AppAuthSection-D0D-aP-n.js"
+      "_AppActive-czQzqbyx.js",
+      "_AppAuthSection-C4jFz5OS.js"
     ]
   },
   "resources/js/router/AppLoginActive.vue": {
-    "file": "assets/AppLoginActive-B71lCimF.js",
+    "file": "assets/AppLoginActive-Bdh6vkEt.js",
     "name": "AppLoginActive",
     "src": "resources/js/router/AppLoginActive.vue",
     "isDynamicEntry": true,
@@ -133,7 +166,7 @@
     ]
   },
   "resources/js/router/AppNotFound.vue": {
-    "file": "assets/AppNotFound-xUpwYQXV.js",
+    "file": "assets/AppNotFound-DYAjlILd.js",
     "name": "AppNotFound",
     "src": "resources/js/router/AppNotFound.vue",
     "isDynamicEntry": true,
@@ -145,19 +178,19 @@
     ]
   },
   "resources/js/router/AppRegister.vue": {
-    "file": "assets/AppRegister-B07FmuD_.js",
+    "file": "assets/AppRegister-BVGP0IAo.js",
     "name": "AppRegister",
     "src": "resources/js/router/AppRegister.vue",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js",
-      "_AppActive-iTYP5dq1.js",
-      "_AppAuthSection-D0D-aP-n.js",
-      "_AppLabel-CHay-ZZK.js"
+      "_AppActive-czQzqbyx.js",
+      "_AppAuthSection-C4jFz5OS.js",
+      "_AppLabel-DGWVFSkF.js"
     ]
   },
   "resources/js/router/AppTest.vue": {
-    "file": "assets/AppTest-Osq8XRqm.js",
+    "file": "assets/AppTest-dotSLl2H.js",
     "name": "AppTest",
     "src": "resources/js/router/AppTest.vue",
     "isDynamicEntry": true,

@@ -28,7 +28,6 @@ class StoreRequest extends FormRequest
             'surname' => 'required|string|min:3|max:50',
             "role" => "integer|min:0|max:5",
             "block" => "boolean",
-            "group_id" => "required|integer|min:0",
             "email" => "required|email|min:3|max:255|unique:users",
             "password" => "required|string|min:3|max:255|confirmed", 
             // "password" => "required|string|required_with:password_confirmation|same:password_confirmation", 
@@ -55,10 +54,6 @@ class StoreRequest extends FormRequest
                 'role.max' => 'Поле не может быть больше 5.',
 
                 'block.required' => 'Поле обязательно для заполнения.',
-
-                'group_id.required' => 'Поле обязательно для заполнения.',
-                'group_id.integer' => 'Поле должно быть целым числом.',
-                'group_id.min' => 'Поле не может быть меньше 0.',
 
                 'email.required' => 'Поле обязательно для заполнения.',
                 'email.email' => 'Поле должно быть действительным адресом электронной почты.',

@@ -1,21 +1,12 @@
 <template>
     <div class="wrapper">
-
-        <!-- <AppHeader v-if="route.meta.headerFooterVisible !== false"/>
-        <main class="main" id="main">
-            <router-view></router-view>
-        </main>
-        <AppFooter v-if="route.meta.headerFooterVisible !== false"/> -->
-
-
         <TransitionGroup name="list">
             <template v-if="userLoaded === true">
                 <AppHeader v-if="route.meta.headerFooterVisible !== false"/>
                 <main class="main" id="main">
                     <router-view></router-view>
                 </main>
-
-                <!-- <AppFooter v-if="route.meta.headerFooterVisible !== false"/> -->
+                
                 <div style="background-color: #343434; padding: 5px 0; color: white;">
                     <div class="container">
                         <h4>User: {{ user }}</h4>
@@ -47,6 +38,7 @@
     *, *::after, *::before {
         padding: 0;
         margin: 0;
+        font-family: "Roboto", sans-serif;
         box-sizing: border-box;
         outline: none;
     }
@@ -70,6 +62,7 @@
         font-size: 16px;
     }
     body {
+        font-family: "Montserrat", sans-serif;
         font-size: 1rem;
         color: var(--clr-secondary);
         background-color: var(--clr-primary);

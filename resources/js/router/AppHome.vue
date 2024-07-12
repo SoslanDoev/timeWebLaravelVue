@@ -1,25 +1,13 @@
 <template>
-    <div class="app__home">
+    <div class="app">
         <div class="container">
-            <div class="app__home-inner">
-                <h1 class="title">Тестирование</h1>
-
-                <div class="app__home-tests" v-if="tests.length">
-                    <div
-                        v-for="item in tests"
-                        :key="item.id"
-                        class="app__home-tests__item hover"
-                        @click.prevent="getTest(item.test.id)"
-                    >
-                    {{ item.test.title }}
-                    </div>
-                </div>
-
-                <div class="app__home-info">
-                    <h2 class="title">Последние результаты</h2>
-                    <div v-for="item in results" style="display: flex; gap: 10px;">
-                        <p>{{ item.test_title }}</p>
-                        <p>{{ item.total_points }}</p>
+            <div class="app__inner">
+                <div class="app__course-list" style="display: flex; align-items: center; gap: 15px;"> 
+                    <div v-for="item in courses" :key="item.id" style="cursor: pointer;">
+                        <div @click.prevent="courseItem(item.id)">
+                            <h3>{{ item.name }}</h3>
+                            <p>Автор: {{ item.user.name }}</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -27,53 +15,33 @@
     </div>
 </template>
 
-
 <script setup>
     import { ref, onMounted } from "vue"
+    import { useRouter } from 'vue-router';
     import axios from "axios"
-    import { useRouter } from 'vue-router'
-    import { useStore, mapState, mapGetters, mapMutations } from 'vuex';
 
-    const store = useStore()
-    const router = useRouter()
-    const tests = ref([])
-    const results = ref([])
+    const router = useRouter();
+    const courses = ref([])
 
-    const getTest = (testID) => {
-        router.push({ name: "Test", params: { id: testID } })
+    const courseItem = (id) => {
+        router.push({ name: 'AppCourseId', params: { id } });
     }
 
-    onMounted(async () => {
-        const groupID = store.state.user.group_id
-        const userID = store.state.user.id
+    const getAllCourse = async () => {
         try {
-            const res = await axios.get(`/api/testschedules/group/${groupID}/${userID}`)
-            tests.value = res.data?.data?.data || res.data?.data || res.data
-        } catch(err) {
+            const response = await axios.get("/api/course")
+            courses.value = response.data?.data?.data || response.data?.data || response.data
+        } catch (err) {
             console.log(err)
         }
-        try {
-            const res = await axios.get(`api/testschedules/res/${userID}`)
-            results.value = res.data?.data?.data || res.data?.data || res.data
-        } catch(err) {
-            console.log(err)
-        }
+    }
+    onMounted(() => {
+        getAllCourse()
     })
 </script>
 
 <style>
-    .app__home-tests {
-        margin: 0 0 25px;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 25px;
-    }
-    .app__home-tests__item {
-        cursor: pointer;
-        padding: 10px;
-        width: 100%;
-        background-color: var(--clr-primary);
-        border: 2px solid var(--clr-secondary);
-        border-radius: 4px;
+    .app__course-list {
+        display: flex;
     }
 </style>

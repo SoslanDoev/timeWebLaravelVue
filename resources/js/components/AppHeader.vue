@@ -8,9 +8,12 @@
                 </RouterLink>
                 <nav class="header__menu">
                     <ul class="header__list">
-                        <RouterLink to="/" v-if="user && user.role === 0">Главная</RouterLink>
+                        <RouterLink to="/">Все курсы</RouterLink>
+                        <!-- <RouterLink to="/get-fav" v-if="user && user.role === 0">Избранные курсы</RouterLink> -->
+                        <RouterLink to="/create-course" v-if="user && user.role === 2">Добавление курса</RouterLink>
+                        <!-- <RouterLink to="/" v-if="user && user.role === 0">Главная</RouterLink>
                         <RouterLink to="/create-test" v-if="user && user.role === 1">Добавление теста</RouterLink>
-                        <RouterLink to="/admin" v-if="user && user.role === 1">Админ</RouterLink>
+                        <RouterLink to="/admin" v-if="user && user.role === 1">Админ</RouterLink> -->
                         <a href="#"
                             v-if="user" 
                             class="header__list-item hover" @click.prevent="logoutFunc">

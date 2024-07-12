@@ -15,6 +15,10 @@ use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\TestScheduleController;
 use App\Http\Controllers\AnswerController;
 use App\Http\Controllers\UserAnswerController;
+use App\Http\Controllers\favoritesController;
+
+
+use App\Http\Controllers\CourseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -121,4 +125,20 @@ Route::group(["namespace" => "UserAnswer", "prefix" => "useranswer"], function()
     Route::get("/{id}", [UserAnswerController::class, "view"]);
     Route::patch("/{id}", [UserAnswerController::class, "update"]);
     Route::delete("/{id}", [UserAnswerController::class, "destroy"]);
+});
+
+Route::group(["namespace" => "Course", "prefix" => "course"], function() {
+    Route::get("/", [CourseController::class, "index"]);
+    Route::post("/", [CourseController::class, "store"]);
+    Route::get("/{id}", [CourseController::class, "view"]);
+    Route::patch("/{id}", [CourseController::class, "update"]);
+    Route::delete("/{id}", [CourseController::class, "destroy"]);
+});
+
+Route::group(["namespace" => "Favorites", "prefix" => "favorites"], function() {
+    Route::get("/{user_id}", [favoritesController::class, "index"]);
+    Route::post("/", [favoritesController::class, "store"]);
+    Route::get("/{user_id}/{course_id}", [favoritesController::class, "view"]);
+    Route::delete("/{user_id}/{course_id}", [favoritesController::class, "destroy"]);
+    // Route::patch("/{id}", [favoritesController::class, "update"]);
 });

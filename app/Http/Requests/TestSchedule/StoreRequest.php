@@ -26,7 +26,6 @@ class StoreRequest extends FormRequest
     {
         return [
             'test_id' => 'required|integer',
-            'group_id' => 'required|integer',
             
             'start_time' => 'required|date|date_format:Y-m-d H:i:s',
             'end_time' => [
@@ -47,9 +46,6 @@ class StoreRequest extends FormRequest
         return [
             'test_id.required' => 'Поле обязательно для заполнения.',
             'test_id.integer' => 'Поле должно быть числом.',
-            
-            'group_id.required' => 'Поле обязательно для заполнения.',
-            'group_id.integer' => 'Поле должно быть числом.',
             
             'start_time.required' => 'Поле обязательно для заполнения.',
             'start_time.date' => 'Поле должно быть допустимой датой.',

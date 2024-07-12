@@ -15,9 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string("surname");
-            $table->integer("role")->default(0); # 0 - User, 1 - Admin
+            $table->integer("role")->default(0); # 0 - User, 1 - Teacher, 2 - Admin
             $table->boolean("block")->default(0); # 0 - Активный, 1 - Заблокированный
-            $table->foreignId('group_id')->constrained('groups')->onDelete('cascade');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
